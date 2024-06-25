@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css' %}" />
+    <link rel="stylesheet" href="{% static 'core/css/bootstrap.css' %}" />
+
+    <title> ParkingU - {% block title %}{% endblock %}</title>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <img src="{% static 'core/img/logo_transparente.png' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                  ParkingU
+                </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="{% url "ParkingU" %}">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url "mapa_estacionamientos" %}">Mapa Estacionamientos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url "estadisticas" %}">Estadisticas</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          {% block content %}
+
+          {% endblock %}
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+            <footer class="footer">
+                <div class="container-fluid">
+                  <span class="text-muted">ParkingU </span>
+                </div>
+              </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
