@@ -39,10 +39,10 @@ def estadisticas(request):
     disp_hora_anterior = [0]*17
 
     dia_actual = date.today().weekday()
-    if dia_actual == 0:
-        dia_anterior = 6
-    elif dia_actual >= 1:
-        dia_anterior = dia_actual - 1
+    if dia_actual == 6:
+        dia_anterior = 0
+    elif dia_actual < 6:
+        dia_anterior = dia_actual + 1
 
     def verificar_tipo_auto(vehiculo, acceso, lugar_lista):
         if acceso == "0":
@@ -181,5 +181,5 @@ def mapa_estacionamientos(request):
     return render(request, 'core/mapa_estacionamientos.html',data)
 
 def control(request):
-    
+
     return render(request, 'core/mapa_estacionamientos.html',data)
