@@ -1,8 +1,66 @@
 {% extends "core/base.html" %}
-
+{% load static %}
 {% block title %}Inicio{% endblock title %}
 
 
 {% block content %}
+    <div class="row">
+        <div class="col-md-4">
+            <div class="container-md text-center text-bg-secondary rounded border" style=";margin-right:20px; padding:1vh;">
+                <br><br>
+                <h2> {{cantidad_actual}}/148</h2>
+                {% if cantidad_actual < 37  %}
+                <span class="badge text-bg-success">O</span> Bajo
+                {% elif cantidad_actual >= 37 and cantidad_actual < 111 %}
+                <span class="badge text-bg-warning">O</span> Medio
+                {% elif cantidad_actual >= 111 %}
+                <span class="badge text-bg-danger">O</span> Alto
+                {% endif %}
+                <br>
+                Entrada maxima: 248
+                <br><br>
+            </div>
+            <div class="border  border-info !round d-none d-md-block">
+                <img
+                    src=" {% static "core/img/Logohd.png" %} "
+                    class="img-fluid rounded-top"
+                    alt=""
+                />
+                
+            </div>
+        </div>
+        <br>
+        <div class="col-md-8">
+            <br>
+            <div class="container">
+
+                <img
+                src="{% static "core/img/Estacionamiento.png" %}"
+                class="img-fluid rounded-top border border-black"
+                alt="mapa de estacionamientos"
+                />
+                <div class="container text-bg-secondary text-center rounded border">
+                    Ocupacion estacionamientos:
+                    <span class="badge" style="background-color:purple;">A</span>{{cantidad_A}}
+                    <span class="badge" style="background-color:cyan;">B</span>{{cantidad_B}}
+                    <span class="badge" style="background-color:green;">C</span>{{cantidad_C}} 
+                    <span class="badge" style="background-color:grey;">D</span>{{cantidad_D}} 
+                    <span class="badge" style="background-color:blue;">E</span>{{cantidad_E}} 
+                    <span class="badge" style="background-color:yellow;">F</span>{{cantidad_F}} 
+                    <span class="badge" style="background-color:orange;">M</span>{{cantidad_M}} 
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div class="border  border-info !round d-md-none">
+            <img
+                src=" {% static "core/img/Logohd.png" %} "
+                class="img-fluid rounded-top"
+                alt=""
+            />
+            
+        </div>
+    </div>
+
 
 {% endblock content %}
