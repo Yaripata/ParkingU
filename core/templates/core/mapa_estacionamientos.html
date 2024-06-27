@@ -1,8 +1,186 @@
 {% extends "core/base.html" %}
-
+{% load static %}
 {% block title %}Mapa{% endblock title %}
 
 
 {% block content %}
+<div class="row">
+    <div class="col-md-4 col-sm-12">
+        <H3>Estacionamientos actuales {{ cantidad }}/148</H3>
+
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  A
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    {% for estacionamiento_a in A %}
+                    <span class="badge 
+                    {% if estacionamiento_a.ocupado == 1 %}
+                        text-bg-danger
+                    {% elif estacionamiento_a.ocupado == 0 %}
+                        text-bg-success
+                    {% endif %}
+                    ">
+                        {{estacionamiento_a.nombre}}
+                    </span>
+                    {% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseB" aria-expanded="false" aria-controls="flush-collapseOne">
+                    B
+                  </button>
+                </h2>
+                <div id="flush-collapseB" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      {% for estacionamiento_a in B %}
+                      <span class="badge 
+                      {% if estacionamiento_a.ocupado == 1 %}
+                          text-bg-danger
+                      {% elif estacionamiento_a.ocupado == 0 %}
+                          text-bg-success
+                      {% endif %}
+                      ">
+                          {{estacionamiento_a.nombre}}
+                      </span>
+                      {% endfor %}
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseC" aria-expanded="false" aria-controls="flush-collapseOne">
+                    C
+                  </button>
+                </h2>
+                <div id="flush-collapseC" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      {% for estacionamiento_a in C %}
+                      <span class="badge 
+                      {% if estacionamiento_a.ocupado == 1 %}
+                          text-bg-danger
+                      {% elif estacionamiento_a.ocupado == 0 %}
+                          text-bg-success
+                      {% endif %}
+                      ">
+                          {{estacionamiento_a.nombre}}
+                      </span>
+                      {% endfor %}
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseD" aria-expanded="false" aria-controls="flush-collapseOne">
+                    D
+                  </button>
+                </h2>
+                <div id="flush-collapseD" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      {% for estacionamiento_a in D %}
+                      <span class="badge 
+                      {% if estacionamiento_a.ocupado == 1 %}
+                          text-bg-danger
+                      {% elif estacionamiento_a.ocupado == 0 %}
+                          text-bg-success
+                      {% endif %}
+                      ">
+                          {{estacionamiento_a.nombre}}
+                      </span>
+                      {% endfor %}
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseE" aria-expanded="false" aria-controls="flush-collapseOne">
+                    E
+                  </button>
+                </h2>
+                <div id="flush-collapseE" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      {% for estacionamiento_a in E %}
+                      <span class="badge 
+                      {% if estacionamiento_a.ocupado == 1 %}
+                          text-bg-danger
+                      {% elif estacionamiento_a.ocupado == 0 %}
+                          text-bg-success
+                      {% endif %}
+                      ">
+                          {{estacionamiento_a.nombre}}
+                      </span>
+                      {% endfor %}
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseF" aria-expanded="false" aria-controls="flush-collapseOne">
+                    F
+                  </button>
+                </h2>
+                <div id="flush-collapseF" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      {% for estacionamiento_a in F %}
+                      <span class="badge 
+                      {% if estacionamiento_a.ocupado == 1 %}
+                          text-bg-danger
+                      {% elif estacionamiento_a.ocupado == 0 %}
+                          text-bg-success
+                      {% endif %}
+                      ">
+                          {{estacionamiento_a.nombre}}
+                      </span>
+                      {% endfor %}
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseM" aria-expanded="false" aria-controls="flush-collapseOne">
+                    M
+                  </button>
+                </h2>
+                <div id="flush-collapseM" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                      {% for estacionamiento_a in M %}
+                      <span class="badge 
+                      {% if estacionamiento_a.ocupado == 1 %}
+                          text-bg-danger
+                      {% elif estacionamiento_a.ocupado == 0 %}
+                          text-bg-success
+                      {% endif %}
+                      ">
+                          {{estacionamiento_a.nombre}}
+                      </span>
+                      {% endfor %}
+                  </div>
+                </div>
+              </div>
+
+          </div>
+
+    </div>
+    <div class="col-md-8 col-sm-12">
+        
+        <img
+            src="{% static "core/img/Estacionamiento.png" %}"
+            class="img-fluid rounded-top"
+            alt="mapa de estacionamientos"
+        />
+    </div>
+</div>
+
 
 {% endblock content %}
