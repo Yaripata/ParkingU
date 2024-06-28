@@ -30,8 +30,8 @@ def homePage(request):
 
 def estadisticas(request):
     lista_entradas = Acceso.objects.all()
-    semana = [[], [], [] , [], [], [], []]
-    lunes, martes, miercoles, jueves, viernes, sabado, domingo = semana
+    #semana = [[], [], [] , [], [], [], []]
+    #lunes, martes, miercoles, jueves, viernes, sabado, domingo = semana
 
     cantidad_autos = [0,0,0,0,0,0,0]
     cantidad_motos = [0,0,0,0,0,0,0]
@@ -89,51 +89,59 @@ def estadisticas(request):
             case 22:
                 lista[16] += 1
 
+    contador = 0
+    contador2 = 0
     for entrada in lista_entradas:
-        if entrada.fecha.weekday() == 0:
-            lunes.append(entrada)
+        fecha = entrada.fecha.weekday()
+        if fecha == 0:
+            #lunes.append(entrada)
             verificar_tipo_auto(entrada.vehiculo, entrada.acceso, 0)
             if dia_actual == 0:
                 contar_hora(disp_hora_actual, entrada)
             elif dia_anterior == 0:
                 contar_hora(disp_hora_anterior, entrada)
-        elif entrada.fecha.weekday() == 1:
-            martes.append(entrada)
+        elif fecha == 1:
+            #martes.append(entrada)
             verificar_tipo_auto(entrada.vehiculo, entrada.acceso, 1)
             if dia_actual == 1:
                 contar_hora(disp_hora_actual, entrada)
             elif dia_anterior == 1:
                 contar_hora(disp_hora_anterior, entrada)
-        elif entrada.fecha.weekday() == 2:
-            miercoles.append(entrada)
+        elif fecha == 2:
+            #miercoles.append(entrada)
             verificar_tipo_auto(entrada.vehiculo, entrada.acceso, 2)
             if dia_actual == 2:
                 contar_hora(disp_hora_actual, entrada)
             elif dia_anterior == 2:
                 contar_hora(disp_hora_anterior, entrada)
-        elif entrada.fecha.weekday() == 3:
-            jueves.append(entrada)
+        elif fecha == 3:
+            #jueves.append(entrada)
             verificar_tipo_auto(entrada.vehiculo, entrada.acceso, 3)
             if dia_actual == 3:
                 contar_hora(disp_hora_actual, entrada)
             elif dia_anterior == 3:
                 contar_hora(disp_hora_anterior, entrada)
-        elif entrada.fecha.weekday() == 4:
-            viernes.append(entrada)
+        elif fecha == 4:
+            #viernes.append(entrada)
             verificar_tipo_auto(entrada.vehiculo, entrada.acceso, 4)
+            print(entrada.fecha)
+            contador += 1  
+            print(contador)
             if dia_actual == 4:
                 contar_hora(disp_hora_actual, entrada)
             elif dia_anterior == 4:
+                contador2+=1
+                print(contador2)
                 contar_hora(disp_hora_anterior, entrada)
-        elif entrada.fecha.weekday() == 5:
-            sabado.append(entrada)
+        elif fecha == 5:
+            #sabado.append(entrada)
             verificar_tipo_auto(entrada.vehiculo, entrada.acceso, 5)
             if dia_actual == 5:
                 contar_hora(disp_hora_actual, entrada)
             elif dia_anterior == 5:
                 contar_hora(disp_hora_anterior, entrada)
-        elif entrada.fecha.weekday() == 6:
-            domingo.append(entrada)
+        elif fecha == 6:
+            #domingo.append(entrada)
             verificar_tipo_auto(entrada.vehiculo, entrada.acceso, 6)
             if dia_actual == 6:
                 contar_hora(disp_hora_actual, entrada)
